@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>Create your Restaurant</h2>
+  <%= simple_form_for @restaurant do |f| %>
+      <div class="mb-3">
+        <%= f.error_notification %>
+      </div>
+      <div class="mb-3">
+        <%= f.input :name, class:"form-control"%>
+      </div>
+      <div class="mb-3">
+        <%= f.input :address, class:"form-control"%>
+      </div>
+      <div class="mb-3">
+        <%= f.input :phone_number, class:"form-control"%>
+      </div>
+      <div class="mb-3">
+        <%= f.input :category, collection: Restaurant::CATEGORIES,  class:"form-control"%>
+      </div>
+      <div class="mb-3">
+        <%= f.submit class:"btn btn-primary"%>
+      </div>
+  <% end %>
+</div>
