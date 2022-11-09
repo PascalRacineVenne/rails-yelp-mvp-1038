@@ -1,9 +1,11 @@
-<div class="container">
-  <h2><%= @restaurant.name %></h2>
-  <p><%= @restaurant.address %></p>
-  <p><%= @restaurant.phone_number %></p>
-  <p><%= @restaurant.category.capitalize %> food</p>
-  <br>
+<div class="d-flex justify-content-around container-md">
+
+  <div class="resto-infos">
+    <h2><%= @restaurant.name %></h2>
+    <p><%= @restaurant.address %></p>
+    <p><%= @restaurant.phone_number %></p>
+    <p><%= @restaurant.category.capitalize %> food</p>
+  </div>
 
   <div class="list-group">
     <% @restaurant.reviews.each do |review| %>
@@ -23,7 +25,8 @@
       </li>
     <% end %>
   </div>
-
+</div>
+<div class="container-sm">
   <h2>Leave a review</h2>
   <%= simple_form_for [@restaurant, @review] do |f| %>
       <div class="mb-3">
@@ -36,5 +39,4 @@
         <%= f.submit class:"btn btn-primary"%>
       </div>
   <% end %>
-  <%= link_to "Home", restaurants_path, class: "btn btn-primary" %>
 </div>
